@@ -1,47 +1,120 @@
 :root {
-  --bg: #ffffff;
-  --text: #111111;
-  --accent: #b388eb;
+  --font-primary: 'Georgia', serif;
+  --font-secondary: 'Arial', sans-serif;
+
+  /* Light Theme */
+  --bg: #fefaf6;
+  --text: #1c1c1c;
+  --accent: #d8b08c;
+  --nav-bg: #f5eee9;
+  --button-bg: #d8b08c;
+  --button-text: #1c1c1c;
+  --footer-bg: #f8f1ec;
 }
 
-body.dark-mode {
-  --bg: #121212;
-  --text: #f5f5f5;
-  --accent: #f48fb1;
+.dark-theme {
+  --bg: #0f0f0f;
+  --text: #e2d3c0;
+  --accent: #c2a178;
+  --nav-bg: #0f0f0f;
+  --button-bg: #c2a178;
+  --button-text: #0f0f0f;
+  --footer-bg: #0f0f0f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: 'Helvetica Neue', sans-serif;
-  background-color: var(--bg);
+  background: var(--bg);
   color: var(--text);
-  transition: background-color 0.4s ease, color 0.4s ease;
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  transition: all 0.3s ease;
+  padding-bottom: 3rem;
 }
 
-header, footer {
-  padding: 1rem 2rem;
-  background-color: var(--accent);
-  color: white;
+.navbar {
+  background: var(--nav-bg);
+  padding: 1.5rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: var(--font-secondary);
+  font-weight: 500;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  padding: 1rem 2rem;
-  margin: 0;
+.logo {
+  font-size: 1.8rem;
 }
 
-nav a {
-  color: var(--text);
+.navbar nav a {
+  margin-left: 1.5rem;
   text-decoration: none;
-  font-weight: bold;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.theme-toggle {
+  margin-left: 2rem;
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
 }
 
 .hero {
-  padding: 4rem 2rem;
   text-align: center;
+  padding: 6rem 2rem 4rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-primary);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  font-family: var(--font-secondary);
+}
+
+.cta-button {
+  background: var(--button-bg);
+  color: var(--button-text);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  opacity: 0.9;
+}
+
+footer {
+  background: var(--footer-bg);
+  padding: 2rem;
+  text-align: center;
+  font-family: var(--font-secondary);
+  font-size: 0.9rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-links {
+  margin-top: 0.5rem;
+}
+
+.footer-links a {
+  margin: 0 1rem;
+  color: var(--text);
+  text-decoration: none;
 }
