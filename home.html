@@ -8,8 +8,9 @@
 </head>
 <body>
   <header class="navbar">
+    <button class="burger" onclick="toggleMenu()">☰</button>
     <div class="logo">Taker</div>
-    <nav>
+    <nav id="desktopNav">
       <a href="#">Gallery</a>
       <a href="#">Designs</a>
       <a href="#">About</a>
@@ -18,13 +19,19 @@
     <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
   </header>
 
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#">Gallery</a>
+    <a href="#">Designs</a>
+    <a href="#">About</a>
+    <a href="#">Booking</a>
+  </nav>
+
   <main class="hero">
     <h1>Ink Meets Soul</h1>
     <p>Whispers in ink. Movements in blue. Markings of the soul.</p>
     <a href="#" class="cta-button">Book a Session</a>
   </main>
 
-  <!-- Featured Tattoo Section -->
   <section class="featured">
     <h2> Featured Work <br> “The Keeper of the Universe” </h2>
     <div class="tattoo-image">
