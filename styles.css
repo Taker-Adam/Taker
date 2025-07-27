@@ -150,3 +150,20 @@ footer {
   color: var(--text);
   text-decoration: none;
 }
+/* Reset base spacing */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Make sure footer is at the bottom */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
+}
