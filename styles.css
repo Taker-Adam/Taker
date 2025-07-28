@@ -2,30 +2,43 @@
   --font-primary: 'Georgia', serif;
   --font-secondary: 'Arial', sans-serif;
 
-  /* Light Theme */
   --bg: #fefaf6;
   --text: #1c1c1c;
+  --text-muted: #777;
   --accent: #d8b08c;
+  --accent-hover: #c49a76;
   --nav-bg: #f5eee9;
   --button-bg: #d8b08c;
   --button-text: #1c1c1c;
   --footer-bg: #f8f1ec;
+  --background-secondary: #f5eee9;
+  --border: #ccc;
 }
 
 .dark-theme {
   --bg: #0f0f0f;
   --text: #e2d3c0;
+  --text-muted: #aaa;
   --accent: #c2a178;
+  --accent-hover: #a78466;
   --nav-bg: #0f0f0f;
   --button-bg: #c2a178;
   --button-text: #0f0f0f;
   --footer-bg: #0f0f0f;
+  --background-secondary: #1c1c1c;
+  --border: #444;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 body {
@@ -35,8 +48,12 @@ body {
   line-height: 1.6;
   transition: all 0.3s ease;
   padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
+/* HEADER */
 .navbar {
   background: var(--nav-bg);
   padding: 1.5rem 2rem;
@@ -67,6 +84,7 @@ body {
   color: var(--text);
 }
 
+/* HERO */
 .hero {
   text-align: center;
   padding: 6rem 2rem 4rem;
@@ -95,10 +113,10 @@ body {
 }
 
 .cta-button:hover {
-  opacity: 0.9;
+  background: var(--accent-hover);
 }
 
-/* 🌟 Featured Tattoo Section */
+/* 🌟 FEATURED */
 .featured {
   text-align: center;
   padding: 4rem 2rem;
@@ -130,15 +148,14 @@ body {
   margin-top: 1rem;
 }
 
+/* FOOTER */
 footer {
   background: var(--footer-bg);
   padding: 2rem;
   text-align: center;
   font-family: var(--font-secondary);
   font-size: 0.9rem;
-  position: relative;
-  bottom: 0;
-  width: 100%;
+  margin-top: auto;
 }
 
 .footer-links {
@@ -150,25 +167,8 @@ footer {
   color: var(--text);
   text-decoration: none;
 }
-/* Reset base spacing */
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
 
-/* Make sure footer is at the bottom */
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-footer {
-  margin-top: auto;
-}
-
-/* Burger Menu & Responsive Nav */
+/* BURGER MENU */
 .burger {
   display: none;
   font-size: 1.5rem;
@@ -196,6 +196,7 @@ footer {
   display: flex;
 }
 
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .navbar {
     flex-wrap: nowrap;
@@ -219,4 +220,127 @@ footer {
   .theme-toggle {
     margin-left: 0;
   }
+
+  .form-row {
+    flex-direction: column;
+  }
+}
+
+/* ✅ BOOKING FORM */
+.booking-container {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 2rem;
+  font-family: var(--font-primary);
+}
+
+.booking-container h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.form-subtext {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  flex: 1 1 100%;
+}
+
+label {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+input,
+textarea {
+  background: var(--background-secondary);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  transition: border 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+}
+
+.btn-book {
+  align-self: center;
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-book:hover {
+  background-color: var(--accent-hover);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-book:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.direct-contact {
+  margin-top: 2rem;
+  text-align: center;
+  font-family: var(--font-secondary);
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.direct-contact a {
+  color: var(--accent);
+  text-decoration: none;
+  margin: 0 0.3rem;
+  font-weight: bold;
+}
+
+.direct-contact a:hover {
+  text-decoration: underline;
+}
+
+.direct-contact span {
+  margin: 0 0.3rem;
+  color: var(--text-muted);
 }

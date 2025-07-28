@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book a Session – Taker</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body class="light-mode">
+  <header class="navbar">
+    <button class="burger" onclick="toggleMenu()">☰</button>
+    <div class="logo">Taker</div>
+    <nav id="desktopNav">
+      <a href="home.html">Home</a>
+      <a href="designs.html">Designs</a>
+      <a href="about.html">About</a>
+      <a href="booking.html">Booking</a>
+    </nav>
+    <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#">Gallery</a>
+    <a href="#">Designs</a>
+    <a href="#">About</a>
+    <a href="#">Booking</a>
+  </nav>
+
+  <main>
+    <section class="booking-container">
+      <h1>Book a Session</h1>
+      <p class="form-subtext">Let’s bring your vision to life.</p>
+      <form class="booking-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" required>
+          </div>
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" required>
+          </div>
+          <div class="form-group">
+            <label for="city">Preferred City</label>
+            <input type="text" id="city" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group full-width">
+            <label for="concept">Tattoo Concept or Idea</label>
+            <textarea id="concept" rows="4" required></textarea>
+            <p class="note">You can choose one of my Instagram designs or request a custom piece. Reference photos or sketches welcome!</p>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="placement">Desired Placement</label>
+            <input type="text" id="placement" required>
+          </div>
+          <div class="form-group">
+            <label for="size">Approximate Size</label>
+            <input type="text" id="size" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-book">Submit Request</button>
+        <div class="direct-contact">
+            <p>Prefer to contact me directly?</p>
+            <a href="mailto:qkskskdndb0@gmail.com">📩 Email me</a>
+            <span>or</span>
+            <a href="https://instagram.com/tattooist_taker" target="_blank">💬 DM me on Instagram</a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Taker. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#">Instagram</a>
+      <a href="#">Email</a>
+    </div>
+  </footer>  
+  <script src="script.js"></script>
+</body>
+</html>
