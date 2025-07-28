@@ -20,3 +20,19 @@ window.addEventListener('resize', () => {
     nav.classList.remove('show');
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const fileInput = document.getElementById('reference');
+  const fileDisplay = document.getElementById('file-name-display');
+
+  if (fileInput && fileDisplay) {
+    fileInput.addEventListener('change', () => {
+      const file = fileInput.files[0];
+      if (file) {
+        fileDisplay.textContent = `Selected: ${file.name}`;
+      } else {
+        fileDisplay.textContent = '';
+      }
+    });
+  }
+});

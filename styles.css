@@ -374,3 +374,10 @@ input[type="file"] {
 .pretty-upload {
   text-align: center;
 }
+
+.file-name-display {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: var(--font-secondary);
+}
