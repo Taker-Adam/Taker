@@ -503,3 +503,72 @@ input[type="file"] {
 .create-button:hover {
   background-color: var(--button-bg);
 }
+
+/* ✅ AVAILABLE DESIGNS PAGE */
+.available-header {
+  text-align: center;
+  padding: 4rem 2rem 2rem;
+  font-family: var(--font-primary);
+}
+
+.available-header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.available-header p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.available-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.available-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+
+.available-item img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.available-item .caption {
+  font-family: var(--font-secondary);
+  font-size: 1rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem; /* 💫 this adds space before the button */
+  color: var(--text);
+  opacity: 0.85;
+}
+
+.available-item button {
+  margin-top: 0.8rem;
+  padding: 0.6rem 1.2rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-secondary);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.available-item button:hover {
+  background: var(--accent-hover);
+}
