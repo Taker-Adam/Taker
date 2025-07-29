@@ -588,3 +588,8 @@ input[type="file"] {
   margin: 3rem 0;
   text-align: center;
 }
+
+.logo {
+  text-decoration: none;
+  color: inherit;
+}
