@@ -1,38 +1,50 @@
-function toggleTheme() {
-  document.documentElement.classList.toggle('dark-theme');
-  document.documentElement.classList.toggle('light-theme');
-}
+// Load theme on page load
+document.addEventListener("DOMContentLoaded", () => {
+  const storedTheme = localStorage.getItem("theme");
+  if (storedTheme) {
+    document.documentElement.classList.add(storedTheme);
+  } else {
+    document.documentElement.classList.add("light-theme");
+  }
 
-function toggleMenu() {
-  const nav = document.getElementById('mobileNav');
-  nav.classList.toggle('show');
-}
+  const fileInput = document.getElementById("reference");
+  const fileDisplay = document.getElementById("file-name-display");
 
-document.querySelectorAll('#mobileNav a').forEach(link => {
-  link.addEventListener('click', () => {
-    document.getElementById('mobileNav').classList.remove('show');
-  });
-});
-
-window.addEventListener('resize', () => {
-  const nav = document.getElementById('mobileNav');
-  if (window.innerWidth > 768) {
-    nav.classList.remove('show');
+  if (fileInput && fileDisplay) {
+    fileInput.addEventListener("change", () => {
+      const file = fileInput.files[0];
+      fileDisplay.textContent = file ? `Selected: ${file.name}` : "";
+    });
   }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const fileInput = document.getElementById('reference');
-  const fileDisplay = document.getElementById('file-name-display');
+// Toggle theme
+function toggleTheme() {
+  const root = document.documentElement;
+  const isDark = root.classList.contains("dark-theme");
 
-  if (fileInput && fileDisplay) {
-    fileInput.addEventListener('change', () => {
-      const file = fileInput.files[0];
-      if (file) {
-        fileDisplay.textContent = `Selected: ${file.name}`;
-      } else {
-        fileDisplay.textContent = '';
-      }
-    });
+  root.classList.toggle("dark-theme", !isDark);
+  root.classList.toggle("light-theme", isDark);
+
+  localStorage.setItem("theme", isDark ? "light-theme" : "dark-theme");
+}
+
+// Mobile nav toggle
+function toggleMenu() {
+  const nav = document.getElementById("mobileNav");
+  nav.classList.toggle("show");
+}
+
+// Auto-close mobile menu
+document.querySelectorAll("#mobileNav a").forEach((link) => {
+  link.addEventListener("click", () => {
+    document.getElementById("mobileNav").classList.remove("show");
+  });
+});
+
+window.addEventListener("resize", () => {
+  const nav = document.getElementById("mobileNav");
+  if (window.innerWidth > 768) {
+    nav.classList.remove("show");
   }
 });
