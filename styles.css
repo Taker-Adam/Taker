@@ -572,3 +572,11 @@ input[type="file"] {
 .available-item button:hover {
   background: var(--accent-hover);
 }
+
+.born-blue {
+  font-style: italic;
+  color: #6ca6ff;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
