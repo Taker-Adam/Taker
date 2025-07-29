@@ -437,3 +437,69 @@ input[type="file"] {
   color: var(--text);
   opacity: 0.85;
 }
+
+.about-wrapper {
+  padding: 4rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-container {
+  max-width: 700px;
+  padding: 2rem;
+  font-family: var(--font-primary);
+  text-align: center;
+}
+
+.about-title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+  color: var(--text);
+}
+
+.about-quote {
+  font-size: 1.5rem;
+  line-height: 2.2rem;
+  margin-bottom: 2.5rem;
+  font-style: italic;
+  position: relative;
+  color: var(--text);
+}
+
+.quote-mark {
+  font-size: 3rem;
+  color: var(--accent);
+  position: relative;
+  top: 10px;
+}
+
+.about-section h2 {
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: 0.9;
+  color: var(--text);
+}
+
+.create-button {
+  margin-top: 2.5rem;
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: var(--accent);
+  color: var(--bg);
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.create-button:hover {
+  background-color: var(--button-bg);
+}
